@@ -8,8 +8,7 @@ EXPOSE 443
 # Do this apt/pip stuff all in one RUN command to avoid creating large
 # intermediate layers on non-squashable docker installs
 RUN apt update && \
-    apt install -y python3 python3-dev libffi6 python3-pip libffi-dev libssl-dev curl build-essential procps && \
-    pip3 install -U cffi certbot
+    apt install -y python3 python3-pip && pip3 install -U cffi certbot
 
 # Copy in scripts for certbot
 COPY ./scripts/ /scripts
