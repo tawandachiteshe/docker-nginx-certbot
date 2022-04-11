@@ -10,11 +10,7 @@ EXPOSE 443
 RUN apt update && \
     apt install -y python3 python3-dev libffi6 python3-pip libffi-dev libssl-dev curl build-essential procps && \
     curl -L 'https://bootstrap.pypa.io/get-pip.py' | python3 && \
-    pip3 install -U cffi certbot && \
-    apt remove --purge -y python3-dev build-essential libffi-dev libssl-dev curl && \
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    pip3 install -U cffi certbot
 
 # Copy in scripts for certbot
 COPY ./scripts/ /scripts
