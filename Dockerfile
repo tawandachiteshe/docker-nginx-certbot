@@ -9,7 +9,6 @@ EXPOSE 443
 # intermediate layers on non-squashable docker installs
 RUN apt update && \
     apt install -y python3 python3-dev libffi6 python3-pip libffi-dev libssl-dev curl build-essential procps && \
-    curl -L 'https://bootstrap.pypa.io/get-pip.py' | python3 && \
     pip3 install -U cffi certbot
 
 # Copy in scripts for certbot
